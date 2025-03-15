@@ -1,6 +1,6 @@
 ---
-title: Test Post
-date: 2025-03-15 00:34:00 +0800
+title: Customize the Favicon
+date: 2019-08-11 00:34:00 +0800
 categories: [Blogging, Tutorial]
 tags: [favicon]
 ---
