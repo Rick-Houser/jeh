@@ -8,6 +8,22 @@
 ';
 
 /* append your custom style below */
-// body {
-//     background-color: aqua;
-// }
+
+// Custom styles to fix the sidebar highlighting issue
+body:not(.home) #sidebar ul>li:first-child {
+  &.active {
+    .nav-link {
+      color: var(--nav-link-color);
+      background-color: transparent;
+      
+      &:hover {
+        color: var(--sidebar-active-color);
+        background-color: var(--sidebar-hover-bg);
+      }
+      
+      span {
+        opacity: var(--sidebar-nav-text-opacity);
+      }
+    }
+  }
+}
