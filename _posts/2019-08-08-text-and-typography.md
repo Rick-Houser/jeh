@@ -4,6 +4,12 @@ description: Examples of text, typography, math equations, diagrams, flowcharts,
 date: 2019-08-08 11:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
+pin: true
+math: true
+mermaid: true
+image:
+  path: /assets/img/global/devices-mockup.png
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 ## Headings
