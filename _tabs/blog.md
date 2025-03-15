@@ -1,6 +1,6 @@
 ---
 layout: home
-icon: fad fa-blog
+icon: fas fa-blog
 order: 1
 title: Blog
 permalink: /blog/
