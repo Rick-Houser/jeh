@@ -136,7 +136,8 @@ fi;
 
 ## Mathematics
 
-The mathematics powered by [**MathJax**](https://www.mathjax.org/):
+<!-- The mathematics powered by [**MathJax**](https://www.mathjax.org/): -->
+<https://www.mathjax.org/>
 
 $$
 \begin{equation}
@@ -191,7 +192,7 @@ The image below will toggle dark/light mode based on theme preference, notice it
 
 ## Video
 
-<!-- {% include embed/youtube.html id='Balreaj8Yqs' %} -->
+[Watch Video](https://www.youtube.com/watch?v=dTd7f-jK_BE)
 
 ## Reverse Footnote
 
