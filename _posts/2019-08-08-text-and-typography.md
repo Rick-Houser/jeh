@@ -6,6 +6,9 @@ categories: [Blogging, Demo]
 tags: [typography]
 math: true
 mermaid: true
+image:
+  path: /assets/img/global/devices-mockup.png
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 ## Headings
