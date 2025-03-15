@@ -148,7 +148,7 @@ pwa:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 paginate: 10
-paginate_path: "/:num/"
+paginate_path: "/blog/:num/" 
 
 # The base URL of your site
 baseurl: "/jeh"
