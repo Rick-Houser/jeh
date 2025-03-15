@@ -34,7 +34,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
+  name: Rick Houser
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
@@ -52,6 +52,10 @@ webmaster_verifications:
   yandex: # fill in your Yandex verification code
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
+
+author:
+  name: Rick Houser
+  url: https://rick-houser.github.io/jeh/
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
