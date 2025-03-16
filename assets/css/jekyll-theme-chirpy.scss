@@ -44,6 +44,31 @@
 // }
 
 // override shimmer effect
+/* Neutralize .shimmer class */
 .shimmer {
+  overflow: visible !important;
+  position: static !important;
+  background: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
 
+.shimmer::before {
+  content: none !important;
+  background: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
+/* Optional: Hide <a> tags with .shimmer in post previews */
+.post-preview a.shimmer {
+  display: none !important;
+}
+
+/* Ensure preview images display correctly */
+.preview-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block !important;
 }
