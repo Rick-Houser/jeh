@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: blog
 icon: fas fa-blog
 order: 1
 title: Blog
