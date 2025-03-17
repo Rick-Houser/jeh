@@ -74,19 +74,39 @@
   display: block !important;
 }
 
-.post-preview {
-  display: flex;
-  flex-direction: row-reverse;
+/* Custom CSS to fix the card layout issue */
+#post-list .card-wrapper.card {
+  display: block; /* Override the flex display from Bootstrap */
 }
 
-.post-preview .col-md-5,
-.post-preview .col-md-7,
-.post-preview .col-md-12 {
-  display: block;
+#post-list .post-preview {
+  display: flex !important; /* Force flex display */
+  flex-direction: row-reverse !important; /* Force the correct direction */
+}
+
+/* Fix for the anchor tag issue */
+#post-list .card-wrapper > a.post-preview {
+  display: flex !important;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* Ensure the columns display properly */
+#post-list .post-preview > .col-md-5,
+#post-list .post-preview > .col-md-7 {
   position: relative;
+  display: block;
 }
 
-.post-preview img {
+/* Fix for the image container */
+#post-list .post-preview > .col-md-5 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* Ensure the card body maintains vertical layout */
+#post-list .card-body {
+  display: flex;
+  flex-direction: column;
 }
