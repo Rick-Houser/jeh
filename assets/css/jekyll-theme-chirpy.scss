@@ -76,36 +76,32 @@
 
 /* Custom CSS to fix the card layout issue */
 #post-list .card-wrapper.card {
-  display: block; /* Override the flex display from Bootstrap */
+  /* Keep the flex display but change the direction */
+  flex-direction: row-reverse !important;
 }
 
+/* Make sure the post-preview maintains proper structure */
 #post-list .post-preview {
-  display: flex !important; /* Force flex display */
-  flex-direction: row-reverse !important; /* Force the correct direction */
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  width: 100%;
 }
 
-/* Fix for the anchor tag issue */
+/* Fix for the anchor wrapping all content */
 #post-list .card-wrapper > a.post-preview {
+  text-decoration: none;
   display: flex !important;
   width: 100%;
-  text-decoration: none;
 }
 
-/* Ensure the columns display properly */
-#post-list .post-preview > .col-md-5,
-#post-list .post-preview > .col-md-7 {
-  position: relative;
-  display: block;
-}
-
-/* Fix for the image container */
+/* Ensure image container behaves properly */
 #post-list .post-preview > .col-md-5 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Ensure the card body maintains vertical layout */
+/* Preserve vertical layout for card content */
 #post-list .card-body {
   display: flex;
   flex-direction: column;
