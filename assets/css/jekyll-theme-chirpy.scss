@@ -73,3 +73,20 @@
   object-fit: cover;
   display: block !important;
 }
+
+.post-preview {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.post-preview .col-md-5,
+.post-preview .col-md-7,
+.post-preview .col-md-12 {
+  display: block;
+  position: relative;
+}
+
+.post-preview img {
+  max-width: 100%;
+  height: auto;
+}
