@@ -22,9 +22,7 @@ refactor: true
             {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
           {% endif %}
           <div class="col-md-5">
-            <div class="preview-img">
-              <img src="{{ src }}" alt="{{ alt }}" {{ lqip }} class="img-fluid">
-            </div>
+            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
           </div>
           {% assign card_body_col = '7' %}
         {% endif %}
