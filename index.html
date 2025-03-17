@@ -5,7 +5,22 @@ permalink: /
 show_posts: false
 ---
 
-<div class="text-start">
-  <h1>Hello, I'm Rick!</h1>
-  <p>I specialize in turning technical challenges into scalable solutions that drive business success. Discover more about my journey and skills in the <a href="{% link _tabs/about me.md %}">About Me</a> section, or delve into my perspectives on technology, software and systems reliability in my <a href="{% link _tabs/blog.md %}">Blog</a>.</p>
+<div class="container-fluid p-0">
+  <!-- Hero image with optimized loading -->
+  <div class="hero-section mb-4">
+    <img 
+      src="{{ '/assets/img/profile-banner.webp' | relative_url }}" 
+      alt="Software Engineering Professional" 
+      width="1200" 
+      height="400"
+      class="img-fluid w-100" 
+      loading="eager"
+      fetchpriority="high">
+  </div>
+
+  <div class="text-start">
+    <h1 class="mb-3">Hello, I'm Rick!</h1>
+    <p>I transform complex technical challenges into robust, scalable solutions that drive measurable business outcomes.</p>
+    <p>Discover more about my technical background and professional journey in the <a href="{% link _tabs/about me.md %}" class="fw-bold">About Me</a> section, or explore my insights on software architecture, engineering best practices, and technology trends in my <a href="{% link _tabs/blog.md %}" class="fw-bold">Blog</a>.</p>
+  </div>
 </div>
