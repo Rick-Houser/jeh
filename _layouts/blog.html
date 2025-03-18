@@ -3,11 +3,12 @@ layout: default
 refactor: true
 title: Blog
 ---
+<h1 class="dynamic-title">Technical Musings</h1>
 {% include lang.html %}
 {% assign all_pinned = site.posts | where: 'pin', 'true' %}
 {% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 {% assign posts = all_pinned | concat: all_normal %}
-<div id="post-list" class="flex-grow-1 px-xl-1">
+<div id="post-list" class="content flex-grow-1 px-xl-1">
   {% for post in posts %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
