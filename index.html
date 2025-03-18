@@ -6,13 +6,7 @@ show_posts: false
 ---
 <div class="container-fluid p-0">
   <!-- Hero image with optimized loading -->
-  <div class="mb-4">
-    <picture>
-      <source srcset="{{ '/assets/img/profile-banner.webp' | relative_url }}" type="image/webp">
-      <source srcset="{{ '/assets/img/profile-banner.jpg' | relative_url }}" type="image/jpeg"> 
-      <img src="{{ '/assets/img/profile-banner.jpg' | relative_url }}" alt="Software Engineering Professional" class="img-fluid w-100">
-    </picture>
-  </div>
+  <div class="mb-4" style="height: 400px; background-image: url('{{ '/assets/img/profile-banner.webp' | relative_url }}'); background-size: cover; background-position: center;"></div>
 
   <div class="text-start">
     <h1 class="mb-3">Hello, I'm Rick!</h1>
