@@ -106,3 +106,18 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Hero banner styling */
+.hero-banner {
+  height: 400px;
+  background-image: url('/assets/img/profile-banner.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mobile adjustments for hero banner */
+@media (max-width: 767.98px) {
+  .hero-banner {
+    height: 200px; /* Lower height on mobile */
+  }
+}
