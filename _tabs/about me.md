@@ -12,4 +12,4 @@ Since 2018, I've thrived in DevOps and cloud engineering roles. At Taos (acquire
 
 Recently, I've been freelancing, assisting clients in reducing tech debt and cloud expenses—demonstrating my ability to drive results across diverse environments. Outside of tech, I enjoy family time and outdoor adventures, which keep me energized and provide fresh perspectives on technical challenges.
 
-Curious to learn more about my approach to solving technical challenges? Check out my [blog](/blog/) and project portfolio, or reach out via the links below—I'd love to connect about tech or potential opportunities. Thanks for stopping by!
+Curious to learn more about my approach to solving technical challenges? Check out my [blog](/blog) and project portfolio, or reach out via the links below—I'd love to connect about tech or potential opportunities. Thanks for stopping by!
