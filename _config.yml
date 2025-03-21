@@ -66,7 +66,7 @@ author:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: 'G-4XQZEF9J7H'
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
