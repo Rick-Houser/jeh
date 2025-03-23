@@ -17,6 +17,7 @@ Let’s dive into the five actions I took to get this app ready for the big leag
 First things first, I needed something to monitor. I whipped up a Flask app—a lightweight to-do list API with two endpoints: GET /tasks to list tasks and POST /tasks to add one. It’s basic, but that’s the point—start small so we can focus on observability.
 - `Takeaway:` Keep your app lean at the start. Complexity comes later; reliability starts now.
 - `Action:` Pick a framework (I chose Flask), write a couple of endpoints, and run it locally. Make sure it responds to requests—mine returned an empty list ([]) out of the gate.
+
 ```bash
 $ curl http://localhost:5000/tasks
 []
@@ -66,6 +67,7 @@ _These basic tests will evolve into a more comprehensive test suite that drives 
 Next, I added structured logging with python-json-logger. Instead of plain text like “Hey, someone hit the endpoint,” I got JSON logs—think {"levelname": "INFO", "message": "GET /tasks called"}. Why JSON? Because tools like Loki (spoiler for a later phase) can parse it, making debugging a breeze.
 - `Takeaway:` Structured logs are your observability superpower—readable by humans and machines. They’re the first step to understanding what’s happening under the hood.
 - `Action:` Add a logging library, sprinkle logger.info() and logger.warning() calls in your code, and test they fire. I updated my tests to capture logs, ensuring I didn’t miss a beat.
+
 ![Desktop View](/assets/img/posts/20250322/json_logs.png){: width="972" height="589" }
 _Image showing JSON logs from a Flask App_
 
@@ -75,6 +77,7 @@ _Although we’re starting with basic logging now, we’ll expand on this founda
 Time to get modern—I wrapped the app in a Docker container. This locks in dependencies (Flask, logging libs) and ensures it runs the same everywhere. I wrote a Dockerfile, added a .dockerignore to keep junk out, and tested it with a shell script to confirm the API still worked.
 - `Takeaway:` Containers are your ticket to consistency. No more “works on my machine” excuses—Docker makes it repeatable, which is gold for reliability.
 - `Action:` Create a Dockerfile, build your image (docker build -t my-app .), and run it (docker run -p 5000:5000 my-app). Hit it with a request to see it in action. Bonus: script a test to automate the check.
+
 ```bash
 $ docker build -t my-app .
 $ docker run -p 5000:5000 my-app
@@ -86,6 +89,7 @@ _This containerization approach sets us up for multi-instance deployment with lo
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
 - `Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
 - `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
+
 ![Desktop View](/assets/img/posts/20250322/prometheus_01.png){: width="972" height="589" }
 
 _These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards._
