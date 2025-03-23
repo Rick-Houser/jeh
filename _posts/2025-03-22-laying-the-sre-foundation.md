@@ -4,9 +4,6 @@ description: Turn a Flask app into a monitorable system with tests, logs, Docker
 date: 2025-03-22 08:00:00 +0800
 categories: [SRE, Observability]
 tags: [observability, monitoring, containerization, Prometheus, logging, DevOps, Flask]
-image:
-    path: /assets/img/posts/20250322/prometheus_bkg.webp
-    alt: Rendering of a Prometheus monitoring dashboard.
 ---
 
 ![](/assets/img/posts/20250322/prometheus_bkg.webp){: width="972" height="589" }
