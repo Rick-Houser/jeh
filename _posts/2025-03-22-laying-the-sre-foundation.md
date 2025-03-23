@@ -28,6 +28,7 @@ Before going wild with monitoring, I added unit tests. Why? Because SRE isn’t 
 - `Takeaway:` Tests catch bugs before they hit production, reducing error rates (hint: RED method incoming later). They’re your first line of defense.
 - `Action:` Write basic tests for your app’s core functionality. Don’t sweat the details—just ensure it doesn’t blow up. I hit some import snags (like NameError and AttributeError), but sorting those out taught me to keep my module structure tight.
 
+
 ```python
 import unittest
 from app.app import app
@@ -78,6 +79,9 @@ Time to get modern—I wrapped the app in a Docker container. This locks in depe
 - `Takeaway:` Containers are your ticket to consistency. No more “works on my machine” excuses—Docker makes it repeatable, which is gold for reliability.
 - `Action:` Create a Dockerfile, build your image (docker build -t my-app .), and run it (docker run -p 5000:5000 my-app). Hit it with a request to see it in action. Bonus: script a test to automate the check.
 
+> Don’t forget to use a `.dockerignore` file—excluding unnecessary files prevents bloated images and ensures consistent builds across environments.
+{: .prompt-warning }
+
 ```bash
 $ docker build -t my-app .
 $ docker run -p 5000:5000 my-app
@@ -89,6 +93,9 @@ _This containerization approach sets us up for multi-instance deployment with lo
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
 - `Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
 - `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
+
+> The RED method (Rate, Errors, Duration) helps SREs monitor system health—focus on these metrics to catch issues before they escalate.
+{: .prompt-info }
 
 ![Desktop View](/assets/img/posts/20250322/prometheus_01.png){: width="972" height="589" }
 
@@ -123,6 +130,9 @@ Want to follow along? Here’s the quick rundown:
 3. Plug in structured logging—JSON’s your friend.
 4. Dockerize it for portability.
 5. Slap on Prometheus metrics and watch it hum.
+
+> Ensure Docker Compose is installed before running the commands—it’s required to spin up the services.
+{: .prompt-tip }
 
 Want to test my setup? Clone my [**repo**](https://github.com/Rick-Houser/system-prism) to try it yourself—I’ve tagged the full setup at **v1.0** for you to explore. Want to chat about it? Drop me an email (link in the sidebar). To run it, grab the repo with ```bash git clone [repo_link] -b v1.0```, then follow these steps:
 1. ```docker-compose up``` — spins up the services.
