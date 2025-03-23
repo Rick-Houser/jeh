@@ -4,9 +4,7 @@ description: Learn how to transform a basic Flask app into a monitorable system 
 date: 2025-03-22 08:00:00 +0800
 categories: [SRE, DevOps, Flask]
 tags: [observability, monitoring, containerization, Prometheus, logging]
-pin: false
 ---
-
 
 Hey there, fellow reliability enthusiasts! Ever wondered how to take a simple web app and turn it into something an SRE would proudly monitor? In this post, I’m kicking off an 8-part series where we’ll start by building a basic observability platform and we’ll evolve that into a fully-featured, scalable, and secure microservices architecture with CI/CD, auto-scaling, advanced observability, and more. Today, we’re covering Phase 1: setting up a basic Flask app with all the SRE goodies to make it observable–think Prometheus, Grafana, and more. No need to be a Python wizard—this is about the process, not the syntax. 
 
