@@ -1,6 +1,6 @@
 ---
-title: Laying the SRE Foundation: A Monitorable Flask App in 5 Steps (Part 1)
-description: Learn how to transform a basic Flask app into a monitorable system with unit tests, structured logging, Docker, and Prometheus metrics—setting the stage for SRE-driven reliability.
+title: Laying the SRE Foundation
+description: Learn how to transform a basic Flask app
 date: 2025-03-22 08:00:00 +0800
 categories: [SRE, DevOps, Flask]
 tags: [observability, monitoring, containerization, Prometheus, logging]
