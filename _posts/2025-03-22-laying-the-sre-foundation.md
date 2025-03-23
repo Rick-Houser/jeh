@@ -94,6 +94,8 @@ Finally, I added Prometheus metrics to track what and how fast. Using prometheus
 
 _These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards._
 
+# Wrapping Up
+
 ## Why This Matters for SRE
 This isn’t just a Flask app anymore—it’s a monitorable system. We’ve laid the groundwork with:
 - `Testing:` Catching issues early.
