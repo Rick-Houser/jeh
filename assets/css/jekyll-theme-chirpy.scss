@@ -74,6 +74,10 @@
   display: block !important;
 }
 
+.preview-img {
+  aspect-ratio: none !important; /* Prevent aspect ratio issues */
+}
+
 /* Custom CSS to fix the card layout issue */
 #post-list .card-wrapper.card {
   /* Keep the flex display but change the direction */
