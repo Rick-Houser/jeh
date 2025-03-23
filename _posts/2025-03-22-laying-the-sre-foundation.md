@@ -65,7 +65,7 @@ _These basic tests will evolve into a more comprehensive test suite that drives 
 Next, I added structured logging with python-json-logger. Instead of plain text like “Hey, someone hit the endpoint,” I got JSON logs—think {"levelname": "INFO", "message": "GET /tasks called"}. Why JSON? Because tools like Loki (spoiler for a later phase) can parse it, making debugging a breeze.
 `Takeaway:` Structured logs are your observability superpower—readable by humans and machines. They’re the first step to understanding what’s happening under the hood.
 `Action:` Add a logging library, sprinkle logger.info() and logger.warning() calls in your code, and test they fire. I updated my tests to capture logs, ensuring I didn’t miss a beat.
-![Desktop View](/assets/img/20250322/json_logs.png){: width="972" height="589" }
+![Desktop View](/assets/img/posts/20250322/json_logs.png){: width="972" height="589" }
 _Image showing JSON logs from a Flask App_
 
 _Although we’re starting with basic logging now, we’ll expand on this foundation with advanced log aggregation later._
@@ -85,7 +85,7 @@ _This containerization approach sets us up for multi-instance deployment with lo
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
 `Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
 `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
-![Desktop View](/assets/img/20250322/prometheus_01.png){: width="972" height="589" }
+![Desktop View](/assets/img/posts/20250322/prometheus_01.png){: width="972" height="589" }
 
 _These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards._
 
