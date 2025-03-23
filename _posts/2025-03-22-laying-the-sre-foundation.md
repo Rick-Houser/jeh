@@ -7,6 +7,7 @@ tags: [observability, monitoring, containerization, Prometheus, logging, DevOps,
 ---
 
 ![](/assets/img/posts/20250322/prometheus_bkg.png){: width="100%" height="auto" }
+_Hero image showing prometheus graph view_
 
 Hey there, fellow reliability enthusiasts! Ever wondered how to take a simple web app and turn it into something an SRE would proudly monitor? In this post, I’m kicking off an 8-part series where we’ll start by building a basic observability platform and we’ll evolve that into a fully-featured, scalable, and secure microservices architecture with CI/CD, auto-scaling, advanced observability, and more. Today, we’re covering Phase 1: setting up a basic Flask app with all the SRE goodies to make it observable–think Prometheus, Grafana, and more. No need to be a Python wizard—this is about the process, not the syntax. 
 
@@ -14,8 +15,8 @@ Let’s dive into the five actions I took to get this app ready for the big leag
 
 ## Step 1: Spin Up a Simple Web App
 First things first, I needed something to monitor. I whipped up a Flask app—a lightweight to-do list API with two endpoints: GET /tasks to list tasks and POST /tasks to add one. It’s basic, but that’s the point—start small so we can focus on observability.
-`Takeaway:` Keep your app lean at the start. Complexity comes later; reliability starts now.
-`Action:` Pick a framework (I chose Flask), write a couple of endpoints, and run it locally. Make sure it responds to requests—mine returned an empty list ([]) out of the gate.
+- `Takeaway:` Keep your app lean at the start. Complexity comes later; reliability starts now.
+- `Action:` Pick a framework (I chose Flask), write a couple of endpoints, and run it locally. Make sure it responds to requests—mine returned an empty list ([]) out of the gate.
 ```bash
 $ curl http://localhost:5000/tasks
 []
@@ -23,8 +24,8 @@ $ curl http://localhost:5000/tasks
 
 ## Step 2: Add Unit Tests (Yes, SREs Care About This!)
 Before going wild with monitoring, I added unit tests. Why? Because SRE isn’t just about watching systems crash—it’s about preventing chaos with solid foundations. I used Python’s unittest to check my endpoints worked as expected—GET returns 200, POST succeeds or fails gracefully.
-`Takeaway:` Tests catch bugs before they hit production, reducing error rates (hint: RED method incoming later). They’re your first line of defense.
-`Action:` Write basic tests for your app’s core functionality. Don’t sweat the details—just ensure it doesn’t blow up. I hit some import snags (like NameError and AttributeError), but sorting those out taught me to keep my module structure tight.
+- `Takeaway:` Tests catch bugs before they hit production, reducing error rates (hint: RED method incoming later). They’re your first line of defense.
+- `Action:` Write basic tests for your app’s core functionality. Don’t sweat the details—just ensure it doesn’t blow up. I hit some import snags (like NameError and AttributeError), but sorting those out taught me to keep my module structure tight.
 
 ```python
 import unittest
@@ -63,8 +64,8 @@ _These basic tests will evolve into a more comprehensive test suite that drives 
 
 ## Step 3: Log Like You Mean It
 Next, I added structured logging with python-json-logger. Instead of plain text like “Hey, someone hit the endpoint,” I got JSON logs—think {"levelname": "INFO", "message": "GET /tasks called"}. Why JSON? Because tools like Loki (spoiler for a later phase) can parse it, making debugging a breeze.
-`Takeaway:` Structured logs are your observability superpower—readable by humans and machines. They’re the first step to understanding what’s happening under the hood.
-`Action:` Add a logging library, sprinkle logger.info() and logger.warning() calls in your code, and test they fire. I updated my tests to capture logs, ensuring I didn’t miss a beat.
+- `Takeaway:` Structured logs are your observability superpower—readable by humans and machines. They’re the first step to understanding what’s happening under the hood.
+- `Action:` Add a logging library, sprinkle logger.info() and logger.warning() calls in your code, and test they fire. I updated my tests to capture logs, ensuring I didn’t miss a beat.
 ![Desktop View](/assets/img/posts/20250322/json_logs.png){: width="972" height="589" }
 _Image showing JSON logs from a Flask App_
 
@@ -72,8 +73,8 @@ _Although we’re starting with basic logging now, we’ll expand on this founda
 
 ## Step 4: Containerize It
 Time to get modern—I wrapped the app in a Docker container. This locks in dependencies (Flask, logging libs) and ensures it runs the same everywhere. I wrote a Dockerfile, added a .dockerignore to keep junk out, and tested it with a shell script to confirm the API still worked.
-`Takeaway:` Containers are your ticket to consistency. No more “works on my machine” excuses—Docker makes it repeatable, which is gold for reliability.
-`Action:` Create a Dockerfile, build your image (docker build -t my-app .), and run it (docker run -p 5000:5000 my-app). Hit it with a request to see it in action. Bonus: script a test to automate the check.
+- `Takeaway:` Containers are your ticket to consistency. No more “works on my machine” excuses—Docker makes it repeatable, which is gold for reliability.
+- `Action:` Create a Dockerfile, build your image (docker build -t my-app .), and run it (docker run -p 5000:5000 my-app). Hit it with a request to see it in action. Bonus: script a test to automate the check.
 ```bash
 $ docker build -t my-app .
 $ docker run -p 5000:5000 my-app
@@ -83,8 +84,8 @@ _This containerization approach sets us up for multi-instance deployment with lo
 
 ## Step 5: Measure It with Prometheus
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
-`Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
-`Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
+- `Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
+- `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
 ![Desktop View](/assets/img/posts/20250322/prometheus_01.png){: width="972" height="589" }
 
 _These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards._
