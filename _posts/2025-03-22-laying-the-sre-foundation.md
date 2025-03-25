@@ -62,7 +62,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-_These basic tests will evolve into a more comprehensive test suite that drives our CI/CD pipeline in future posts._
+These basic tests will evolve into a more comprehensive test suite that drives our CI/CD pipeline in future posts.
 
 ## Step 3: Log Like You Mean It
 Next, I added structured logging with python-json-logger. Instead of plain text like “Hey, someone hit the endpoint,” I got JSON logs—think {"levelname": "INFO", "message": "GET /tasks called"}. Why JSON? Because tools like Loki (spoiler for a later phase) can parse it, making debugging a breeze.
@@ -72,7 +72,7 @@ Next, I added structured logging with python-json-logger. Instead of plain text 
 ![Desktop View](/assets/img/posts/20250322/json_logs.png){: width="972" height="589" }
 _Image showing JSON logs from a Flask App_
 
-_Although we’re starting with basic logging now, we’ll expand on this foundation with advanced log aggregation later._
+Although we’re starting with basic logging now, we’ll expand on this foundation with advanced log aggregation later.
 
 ## Step 4: Containerize It
 Time to get modern—I wrapped the app in a Docker container. This locks in dependencies (Flask, logging libs) and ensures it runs the same everywhere. I wrote a Dockerfile, added a .dockerignore to keep junk out, and tested it with a shell script to confirm the API still worked.
@@ -87,7 +87,7 @@ $ docker build -t my-app .
 $ docker run -p 5000:5000 my-app
 ```
 
-_This containerization approach sets us up for multi-instance deployment with load balancing and eventually Kubernetes orchestration._
+This containerization approach sets us up for multi-instance deployment with load balancing and eventually Kubernetes orchestration.
 
 ## Step 5: Measure It with Prometheus
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
