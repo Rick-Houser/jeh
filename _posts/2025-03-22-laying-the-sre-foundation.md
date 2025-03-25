@@ -9,12 +9,12 @@ tags: [observability, monitoring, containerization, Prometheus, logging, DevOps,
 ![](/assets/img/posts/20250322/prometheus_bkg.webp){: width="100%" height="auto" }
 _Hero image showing prometheus graph view_
 
-Hey there, fellow reliability enthusiasts! Ever wondered how to take a simple web app and turn it into something an SRE would proudly monitor? In this post, I’m kicking off an 8-part series where we’ll start by building a basic observability platform and we’ll evolve that into a fully-featured, scalable, and secure microservices architecture with CI/CD, auto-scaling, advanced observability, and more. Today, we’re covering Phase 1: setting up a basic Flask app with all the SRE goodies to make it observable–think Prometheus, Grafana, and more. No need to be a Python wizard—this is about the process, not the syntax. 
+Welcome to the start of our SRE foundations series! Ever wondered how to take a simple web app and turn it into something an SRE would proudly monitor? In this post, I’m kicking off an 8-part series where we’ll start by building a basic observability platform and we’ll evolve that into a fully-featured, scalable, and secure microservices architecture with CI/CD, auto-scaling, advanced observability, and more. Today, we’re covering part 1: setting up a basic Flask app with all the SRE goodies to make it observable–think Prometheus, Grafana, and more. No need to be a Python wizard—this is about the process, not the syntax. 
 
 Let’s dive into the five actions I took to get this app ready for the big leagues, with a focus on SRE skills you can apply to your own projects.
 
 ## Step 1: Spin Up a Simple Web App
-First things first, I needed something to monitor. I whipped up a Flask app—a lightweight to-do list API with two endpoints: GET /tasks to list tasks and POST /tasks to add one. It’s basic, but that’s the point—start small so we can focus on observability.
+First things first, I needed something to monitor. I created a Flask app—a lightweight to-do list API with two endpoints: GET /tasks to list tasks and POST /tasks to add one. It’s basic, but that’s the point—start small so we can focus on observability.
 - `Takeaway:` Keep your app lean at the start. Complexity comes later; reliability starts now.
 - `Action:` Pick a framework (I chose Flask), write a couple of endpoints, and run it locally. Make sure it responds to requests—mine returned an empty list ([]) out of the gate.
 
@@ -24,7 +24,7 @@ $ curl http://localhost:5000/tasks
 ```
 
 ## Step 2: Add Unit Tests (Yes, SREs Care About This!)
-Before going wild with monitoring, I added unit tests. Why? Because SRE isn’t just about watching systems crash—it’s about preventing chaos with solid foundations. I used Python’s unittest to check my endpoints worked as expected—GET returns 200, POST succeeds or fails gracefully.
+Before focusing on monitoring, I added unit tests. Why? Because SRE isn’t just about watching systems crash—it’s about preventing chaos with solid foundations. I used Python’s unittest to check my endpoints worked as expected—GET returns 200, POST succeeds or fails gracefully.
 - `Takeaway:` Tests catch bugs before they hit production, reducing error rates (hint: RED method incoming later). They’re your first line of defense.
 - `Action:` Write basic tests for your app’s core functionality. Don’t sweat the details—just ensure it doesn’t blow up. I hit some import snags (like NameError and AttributeError), but sorting those out taught me to keep my module structure tight.
 
@@ -92,7 +92,7 @@ _This containerization approach sets us up for multi-instance deployment with lo
 ## Step 5: Measure It with Prometheus
 Finally, I added Prometheus metrics to track what and how fast. Using prometheus-client, I threw in a counter for request totals and a summary for latency. Then, I spun up Prometheus in Docker Compose to scrape those metrics from my app on port 8000. Now I’ve got numbers to watch—request counts ticking up, latency in seconds—ready for dashboards and alerts.
 - `Takeaway:` Metrics are the pulse of your system. Start with basics like rate and duration (RED method vibes), and you’re on the path to proactive monitoring.
-- `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—trust me, it’s satisfying.
+- `Action:` Add a metrics library, expose an endpoint (I used 8000), and set up Prometheus with Docker Compose. Check http://localhost:9090 to see your metrics live—it’s a great way to confirm everything’s working.
 
 > The RED method (Rate, Errors, Duration) helps SREs monitor system health—focus on these metrics to catch issues before they escalate.
 {: .prompt-info }
@@ -114,7 +114,7 @@ These are SRE skills in action—building reliability into the bones of your app
 We’re just scratching the surface of SRE practices here. As we progress through the series, we’ll address other critical aspects like CI/CD pipelines, auto-scaling, incident response, infrastructure as code, and security. This foundation of testability, observability, and containerization is what makes everything else possible.
 
 ## Prerequisites for Following Along
-If you’re planning to follow this series through all phases, you’ll need:
+If you’re planning to follow this series through until the end, you’ll need:
 
 - Basic knowledge of Python and Docker
 - A GitHub account for CI/CD
@@ -146,4 +146,4 @@ Want to test my setup? Clone my [**repo**](https://github.com/Rick-Houser/system
 - `Measure Everything:` Metrics are your eyes into the system.
 
 ## Up Next
-In Phase 2, we’re taking our observability game up a notch by adding Grafana to visualize all those juicy Prometheus metrics we set up. Expect to see slick dashboards showing request rates, latencies, and more—turning raw data into something you can actually see and act on. We’ll hook Grafana into our Docker setup, making it easy to spot trends and troubleshoot issues. Later, in Phase 3, we’ll add alerting and cloud deployment, and by Phase 4, we’ll dive deeper with tools like Loki for logs. Stay tuned, and let’s keep building reliability together!
+In part 2, we’re taking our observability game up a notch by adding Grafana to visualize all those Prometheus metrics we set up. Expect to see slick dashboards showing request rates, latencies, and more—turning raw data into something you can actually see and act on. We’ll hook Grafana into our Docker setup, making it easy to spot trends and troubleshoot issues. Later, in part 3, we’ll add alerting and cloud deployment, and by part 4, we’ll dive deeper with tools like Loki for logs. Stay tuned as we continue to build reliability in the next post!
