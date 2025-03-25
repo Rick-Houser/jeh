@@ -97,11 +97,10 @@ Finally, I added Prometheus metrics to track what and how fast. Using prometheus
 > The RED method (Rate, Errors, Duration) helps SREs monitor system health—focus on these metrics to catch issues before they escalate.
 {: .prompt-info }
 
+These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards.
+
 ![Desktop View](/assets/img/posts/20250322/prometheus_01.png){: width="972" height="589" }
-
-_These basic metrics give us visibility now. We’ll expand upon these later with distributed tracing and enhanced dashboards._
-
-# Wrapping Up
+_Prometheus dashboard image showing the request_count_total and graph_
 
 ## Why This Matters for SRE
 This isn’t just a Flask app anymore—it’s a monitorable system. We’ve laid the groundwork with:
