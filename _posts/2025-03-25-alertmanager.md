@@ -29,7 +29,7 @@ Next, I configured Prometheus to detect high error rates and Alertmanager to han
   {: .prompt-tip }
 
 ![Desktop View](/assets/img/posts/20250325/high-error-alerts.png){: width="100%" height="auto" }
-_High Error Alerts shown in Prometheus_
+_HighErrorRate Alerts shown in Prometheus_
 
 ## Step 3: Deploy to AWS EC2
 I took the app from my laptop to AWS EC2, starting with the Flask container alone, then scaling to the full stack—app, Prometheus, Grafana, and Alertmanager—via Docker Compose. This required pushing files to EC2 and opening ports, mimicking a real deployment.
@@ -52,7 +52,6 @@ Things didn’t work right away—Alertmanager crashed due to a config error, an
 > Check container logs with `docker logs <container-id>` to diagnose crashes like Alertmanager config errors.
   {: .prompt-info }
 
-[insert_image_here: Alertmanager UI showing a `HighErrorRate` alert]
 ![Desktop View](/assets/img/posts/20250325/alertmanager-high-alerts.png){: width="100%" height="auto" }
 _Alertmanager UI showing a 'HighErrorRate' alert_
 
