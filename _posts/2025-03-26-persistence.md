@@ -6,8 +6,6 @@ categories: [SRE, Observability, Cloud]
 tags: [sqlite, loki, promtail, grafana, flask, ec2, docker-compose, monitoring]
 ---
 
-# Deepening Observability: Persistence, Logs, and Dashboards in Part 4
-
 Let’s continue our SRE journey. In part 3, we added alerting with Alertmanager and deployed our Flask app to AWS EC2, tagging it as `v3.0`. Now, in part 4, we’re enhancing observability with persistent storage, log aggregation, and richer dashboards. These steps make our app more realistic and insightful—core traits of a reliable system. Here’s how I tackled it in four steps, with lessons for your own projects.
 
 ## Step 1: Add Persistence with SQLite

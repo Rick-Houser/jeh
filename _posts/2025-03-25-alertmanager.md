@@ -6,8 +6,6 @@ categories: [SRE, Observability, Cloud]
 tags: [prometheus, alertmanager, flask, ec2, docker-compose, monitoring]
 ---
 
-# Strengthening Reliability: Alerting and Cloud Deployment
-
 Welcome back, reliability enthusiasts. In part 2, we added Grafana to visualize our Flask app’s metrics, tagging it as `v2.0`. Now, in part 3, we’re enhancing our setup with alerting and deploying it to the cloud. This moves us from passive observation to proactive monitoring and brings our app into a production-like environment on AWS EC2. Here’s how I approached it in four steps, with an eye on SRE principles you can apply to your own systems.
 
 ## Step 1: Track Errors for Full Observability
