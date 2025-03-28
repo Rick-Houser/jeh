@@ -6,8 +6,6 @@ categories: [SRE, Observability, Cloud]
 tags: [locust, psutil, prometheus, grafana, flask, ec2, docker-compose, scaling, monitoring]
 ---
 
-# Scaling and Resource Monitoring: Pushing Reliability in Part 5
-
 Welcome back to our SRE exploration. In part 4, we deepened observability with SQLite persistence, Loki logs, and enhanced dashboards, tagging it as `v4.0`. Now, in part 5, we’re testing scalability and resource usage—load testing the app, tracking CPU and memory, and running multiple instances. This advances our USE method (Utilization, Saturation, Errors) and prepares the system for real-world demands. Here’s how I approached it in four steps, with insights for your own setups.
 
 ## Step 1: Monitor Resource Usage
