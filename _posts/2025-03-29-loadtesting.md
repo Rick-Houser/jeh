@@ -6,8 +6,6 @@ categories: [SRE, Observability, Cloud]
 tags: [flask, prometheus, grafana, locust, postgresql, docker-compose, monitoring, load-testing, nginx]
 ---
 
-# SRE Basics - Advanced Monitoring and Load Testing with Multiple Instances (Part 6)
-
 Welcome back! In prior posts, we built a Flask app with basic monitoring, up to `v5.0`. Part 6 advances observability by running two instances with PostgreSQL, tracking USE and RED metrics via Prometheus and Grafana, and testing reliability with Locust. We hit 92% CPU, triggering a `HighCPUUsage` alert, though 50 to 60% failures under load indicate areas to improve. Here’s the five-step process, tailored for SRE skill-building.
 
 ## Step 1: Migrate to PostgreSQL
@@ -74,7 +72,7 @@ _HighCPUUsage Alerts firing in Prometheus_
 _Locust showing RemoteDisconnected errors_
 
 ## Why This Matters for SRE
-Part 6 creates an SRE playground with live USE metrics (CPU and memory utilization, errors) and RED metrics (request rates, errors), plus a basic alert. Two instances with Nginx mimic a distributed setup, ideal for chaos testing and recovery drills. The high failure rate sets up our next challenge.
+In part 6 we created an SRE playground with live USE metrics (CPU and memory utilization, errors) and RED metrics (request rates, errors), plus a basic alert. Two instances with Nginx mimic a distributed setup, ideal for chaos testing and recovery drills. The high failure rate sets up our next challenge.
 
 ## Try It Yourself
 Build your SRE skills:
@@ -92,4 +90,4 @@ Clone [insert_repo_link_here], checkout `v6.0`, and run `docker-compose up -d`. 
 - **Testing**: Push limits to learn.
 
 ## Up Next
-Part 7 will explore Kubernetes and chaos engineering by simulating failures like DB outages and network delays to test recovery and refine alerts, staying true to SRE’s heart.
+In part 7 we will explore Kubernetes and chaos engineering by simulating failures like DB outages and network delays to test recovery and refine alerts, staying true to SRE’s heart.
