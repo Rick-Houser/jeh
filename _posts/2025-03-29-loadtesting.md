@@ -52,7 +52,8 @@ Metrics didn’t reach Grafana because `prometheus.yml` targeted port 8000 while
   > Dual ports (5000:5000, 8000:8000) in Docker Compose can mislead, so check `docker logs` to confirm.
   {: .prompt-warning }
 
-```bash $ docker logs flask-app-1
+```bash 
+$ docker logs flask-app-1
 [2025-03-29 02:48:27 +0000] [1] [INFO] Starting gunicorn 23.0.0
 [2025-03-29 02:48:27 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000
 ```
@@ -68,6 +69,7 @@ Locust simulated 1000 users at a 100 spawn rate, pushing CPU to 92%. A `HighCPUU
 
 ![Desktop View](/assets/img/posts/20250329/HighCPUUsage-alerts.png ){: width="100%" height="auto" }
 _HighCPUUsage Alerts firing in Prometheus_
+
 ![Desktop View](/assets/img/posts/20250329/locust-failures.png ){: width="100%" height="auto" }
 _Locust showing RemoteDisconnected errors_
 
