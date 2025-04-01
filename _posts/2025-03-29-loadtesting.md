@@ -23,8 +23,8 @@ PostgreSQL startup delays crashed the app (`psycopg2.OperationalError`). We adde
 - **Takeaway**: Resilience against failures reduces downtime.
 - **Action**: Implement retries for external dependencies.
   
-  > Cap retries (e.g., 5 attempts, 2s delay) to avoid infinite loops on persistent failures.
-  {: .prompt-tip }
+> Cap retries (e.g., 5 attempts, 2s delay) to avoid infinite loops on persistent failures.
+{: .prompt-tip }
 
 ![Desktop View](/assets/img/posts/20250329/db-retry.png ){: width="100%" height="auto" }
 _Database retry logic in app.py_
@@ -35,8 +35,8 @@ Two Flask instances (`flask-app-1`, `flask-app-2`) ran on port 5000 internally, 
 - **Takeaway**: Aggregated metrics reveal system health across nodes.
 - **Action**: Scale instances and monitor with Prometheus and Grafana.
   
-  > Label instances in Prometheus (e.g., `instance="flask-app-1"`) for clear Grafana visuals.
-  {: .prompt-info }
+> Label instances in Prometheus (e.g., `instance="flask-app-1"`) for clear Grafana visuals.
+{: .prompt-info }
 
 ![Desktop View](/assets/img/posts/20250329/cpu-usage.png ){: width="100%" height="auto" }
 _CPU Usage panels as shown in Grafana_
@@ -47,8 +47,8 @@ Metrics didn’t reach Grafana because `prometheus.yml` targeted port 8000 while
 - **Takeaway**: Misaligned configs break observability, so trust your logs.
 - **Action**: Verify ports match between app and monitoring.
   
-  > Dual ports (5000:5000, 8000:8000) in Docker Compose can mislead, so check `docker logs` to confirm.
-  {: .prompt-warning }
+> Dual ports (5000:5000, 8000:8000) in Docker Compose can mislead, so check `docker logs` to confirm.
+{: .prompt-warning }
 
 ```bash 
 $ docker logs flask-app-1
@@ -62,8 +62,8 @@ Locust simulated 1000 users at a 100 spawn rate, pushing CPU to 92%. A `HighCPUU
 - **Takeaway**: Load tests expose limits, alerts flag issues, and failures provide lessons.
 - **Action**: Stress your system and refine alerts.
   
-  > High failures (50 to 60%) under load signal scaling limits, so consider tuning Gunicorn workers or adding a load balancer next.
-  {: .prompt-warning }
+> High failures (50 to 60%) under load signal scaling limits, so consider tuning Gunicorn workers or adding a load balancer next.
+{: .prompt-warning }
 
 ![Desktop View](/assets/img/posts/20250329/HighCPUUsage-alerts.png ){: width="100%" height="auto" }
 _HighCPUUsage Alerts firing in Prometheus_

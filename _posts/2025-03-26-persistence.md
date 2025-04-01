@@ -11,12 +11,12 @@ Let’s continue our SRE journey. In part 3, we added alerting with Alertmanager
 ## Step 1: Add Persistence with SQLite
 I swapped the in-memory task list for SQLite, adding full CRUD functionality—create, read, update, delete. Tasks now persist across restarts, stored in a `tasks.db` file outside the container, mimicking production setups where data lives beyond ephemeral instances.
 
-- **Takeaway**: Persistence ensures state survives failures—a must for real-world reliability.
-- **Action**: Replace volatile storage with a database; mount it externally for durability.
-  
   > Always mount database files outside the container—internal storage risks data loss on container restarts.
   {: .prompt-warning }
 
+- **Takeaway**: Persistence ensures state survives failures—a must for real-world reliability.
+- **Action**: Replace volatile storage with a database; mount it externally for durability.
+  
 ![Desktop View](/assets/img/posts/20250326/sqlite.png){: width="100%" height="auto" }
 _CRUD endpoints in app.py using SQLite_
 
@@ -44,12 +44,12 @@ _Grafana dashboard with logs and error rate panels_
 ## Step 4: Troubleshoot Persistence Hiccups
 SQLite setup hit a snag—`tasks.db` kept appearing as a directory, crashing the app. Pre-creating it as a file and using absolute paths (`/app/tasks.db`) fixed it. This taught me to double-check volume mounts and file assumptions.
 
-- **Takeaway**: Reliability includes solving unexpected quirks—persistence demands precision.
-- **Action**: Test storage setups thoroughly; expect the unexpected.
-  
   > Use `docker volume ls` to inspect mounts if files aren’t appearing as expected.
   {: .prompt-tip }
 
+- **Takeaway**: Reliability includes solving unexpected quirks—persistence demands precision.
+- **Action**: Test storage setups thoroughly; expect the unexpected.
+  
 ```bash
 $ curl -X POST -H "Content-Type: application/json" -d '{"task": "Test"}' http://localhost:5000/tasks
 ```

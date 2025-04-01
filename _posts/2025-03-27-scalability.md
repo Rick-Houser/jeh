@@ -23,8 +23,8 @@ To stress the app, I introduced Locust, a Python-based load testing tool. A simp
 - **Takeaway**: Load testing ensures your system handles traffic spikes gracefully.
 - **Action**: Write a load test script and run it against your app’s endpoints.
   
-  > Start with a low user count (e.g., 10) in Locust to establish a baseline before scaling up.
-  {: .prompt-tip }
+> Start with a low user count (e.g., 10) in Locust to establish a baseline before scaling up.
+{: .prompt-tip }
 
 ![Desktop View](/assets/img/posts/20250327/locust-ui.png ){: width="100%" height="auto" }
 _Locust UI showing 50 users and request stats_
@@ -44,8 +44,8 @@ Adding resource metrics hit two snags. First, I forgot to import `Gauge` in `app
 - **Takeaway**: Small oversights and caching can derail deployments, so verify every layer.
 - **Action**: Check imports and force fresh builds when debugging.
   
-  > Docker may cache old images, so use `docker-compose build --no-cache` to ensure changes like fixed imports are applied.
-  {: .prompt-warning }
+> Docker may cache old images, so use `docker-compose build --no-cache` to ensure changes like fixed imports are applied.
+{: .prompt-warning }
 
 ![Desktop View](/assets/img/posts/20250327/cpu-and-memory-panels.png ){: width="100%" height="auto" }
 _Grafana UI showing CPU and Memory Usage panels_
