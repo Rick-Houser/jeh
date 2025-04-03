@@ -6,10 +6,10 @@ categories: [SRE, Observability, Cloud]
 tags: [locust, psutil, prometheus, grafana, flask, ec2, docker-compose, scaling, monitoring]
 ---
 
-Welcome back to our SRE exploration. In Part 4, we deepened observability with SQLite persistence, Loki logs, and enhanced dashboards, tagging it as `v4.0`. Now, in Part 5, we test scalability and resource usage by load testing the app, tracking CPU and memory, and running multiple instances. This advances our USE method of Utilization, Saturation, and Errors while preparing the system for real-world demands. Here’s how I approached it in four steps, with insights for your own setups.
+In Part 4, we deepened observability with SQLite persistence, Loki logs, and enhanced dashboards. Now, in Part 5, we test scalability and resource usage by load testing the app, tracking CPU and memory, and running multiple instances. This advances our USE method of Utilization, Saturation, and Errors while preparing the system for real-world demands. Here’s how I approached it in four steps, with insights for your own setups.
 
 ## Step 1: Monitor Resource Usage
-I added CPU and memory metrics using `psutil` and Prometheus’ `Gauge`. A background thread updates these every few seconds, exposing them alongside existing metrics like request counts and errors. This provides visibility into resource utilization, a key piece of the USE puzzle.
+I added CPU and memory metrics using `psutil` and Prometheus’ `Gauge`. A background thread updates these every few seconds, exposing them alongside existing metrics like request counts and errors. This provides visibility into resource utilization, a key piece of the USE puzzle. For saturation, I went with request processing time as a stand-in metric. It’s a decent way to spot when the system’s getting bogged down. In a full-on SRE setup, we’d dig into stuff like queue lengths or thread pool stats, but for this intro series, it does the trick. We’ll save the deep dive into comprehensive USE metrics for a future project. Plenty more to explore there.
 
 - **Takeaway**: Resource monitoring catches saturation before it impacts users.
 - **Action**: Instrument your app with CPU and memory metrics via a metrics library.
@@ -60,12 +60,10 @@ Want to scale your app? Here’s the rundown:
 3. Run multiple instances by updating Docker Compose and Prometheus targets.
 4. Test and tweak while monitoring Grafana under load.
 
-Clone my [**repo**](https://github.com/Rick-Houser/system-prism), checkout `v5.0`, and run `docker-compose up -d`.
-
 ## Best Practices Recap
 - **Granular Metrics**: Track resources per instance for precise insights.
 - **Load Realism**: Start small with tests, then ramp up.
 - **Build Fresh**: Avoid caching surprises with `--no-cache`.
 
 ## Up Next
-Part 6 will refine this with a possible load balancer, external DB, or autoscaling. We’re building a robust, observable system, so join me for the next step!
+In part 6 we will refine this and add a load balancer, switch to Postgres, and set up load-based alerts. We’re building a robust, observable system, so join me for the next step!

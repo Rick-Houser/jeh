@@ -1,12 +1,12 @@
 ---
 title: SRE Basics - Advanced Monitoring and Load Testing with Multiple Instances (Part 6)
 description: Run two Flask instances with PostgreSQL, monitor USE/RED metrics via Prometheus and Grafana, and load test with Locust to push reliability.
-date: 2025-03-29 08:00:00 +0000
+date: 2025-03-29 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
 tags: [flask, prometheus, grafana, locust, postgresql, docker-compose, monitoring, load-testing, nginx]
 ---
 
-Welcome back! In prior posts, we built a Flask app with basic monitoring, up to `v5.0`. Part 6 advances observability by running two instances with PostgreSQL, tracking USE and RED metrics via Prometheus and Grafana, and testing reliability with Locust. We hit 92% CPU, triggering a `HighCPUUsage` alert, though 50 to 60% failures under load indicate areas to improve. Here’s the five-step process, tailored for SRE skill-building.
+Thanks for joining me for Part 6 of this SRE series. In the previous posts, we built a Flask app with monitoring capabilities. During this process, we hit 92% CPU, which triggered a `HighCPUUsage` alert, but 50 to 60% failures under load showed there’s still work to do. Shifting from EC2 to Docker Compose, I’ll take observability further by running two instances with PostgreSQL, track USE/RED metrics, and test reliability with Locust. Here’s the five-step process I followed, with insights for building your own SRE skills.
 
 ## Step 1: Migrate to PostgreSQL
 We swapped SQLite for PostgreSQL to support multiple instances, updating `app.py` with `psycopg2` and adding a `db` service in `docker-compose.yml`.
@@ -29,11 +29,11 @@ PostgreSQL startup delays crashed the app (`psycopg2.OperationalError`). We adde
 ![Desktop View](/assets/img/posts/20250329/db-retry.png ){: width="100%" height="auto" }
 _Database retry logic in app.py_
 
-## Step 3: Monitor Multiple Instances
-Two Flask instances (`flask-app-1`, `flask-app-2`) ran on port 5000 internally, with Prometheus scraping `cpu_usage_percent` and `request_count_total`. Grafana visualized USE metrics, including utilization and errors.
+## Step 3: Monitor Multiple Instances with Nginx
+Two Flask instances (`flask-app-1`, `flask-app-2`) ran on port 5000 internally, proxied by Nginx for load balancing. Prometheus scraped `cpu_usage_percent` and `request_count_total`, and Grafana visualized USE metrics, including utilization and errors.
 
 - **Takeaway**: Aggregated metrics reveal system health across nodes.
-- **Action**: Scale instances and monitor with Prometheus and Grafana.
+- **Action**: Scale instances, add a load balancer like Nginx, and monitor with Prometheus and Grafana.
   
 > Label instances in Prometheus (e.g., `instance="flask-app-1"`) for clear Grafana visuals.
 {: .prompt-info }
@@ -71,6 +71,11 @@ _HighCPUUsage Alerts firing in Prometheus_
 ![Desktop View](/assets/img/posts/20250329/locust-failures.png ){: width="100%" height="auto" }
 _Locust showing RemoteDisconnected errors_
 
+## Step 6 (Optional): Chaos Testing
+- Ran basic chaos tests (e.g., killing a Flask instance) to verify resilience.
+- **Takeaway**: Chaos exposes weak points—start small.
+- **Action**: Kill a container and check recovery.
+
 ## Why This Matters for SRE
 In part 6 we created an SRE playground with live USE metrics (CPU and memory utilization, errors) and RED metrics (request rates, errors), plus a basic alert. Two instances with Nginx mimic a distributed setup, ideal for chaos testing and recovery drills. The high failure rate sets up our next challenge.
 
@@ -82,12 +87,10 @@ Build your SRE skills:
 4. Monitor by fixing Prometheus ports.
 5. Test by loading with Locust and setting an alert.
 
-Clone [insert_repo_link_here], checkout `v6.0`, and run `docker-compose up -d`. Push to Docker Hub: `docker push yourusername/flask-app:v6.0`.
-
 ## Best Practices Recap
 - **Resilience**: Retries beat crashes.
 - **Observability**: Align ports for metrics flow.
 - **Testing**: Push limits to learn.
 
 ## Up Next
-In part 7 we will explore Kubernetes and chaos engineering by simulating failures like DB outages and network delays to test recovery and refine alerts, staying true to SRE’s heart.
+In Part 7, I’ll focus on securing Postgres with Secrets and ensuring full USE and RED metric coverage on Kubernetes using Minikube. This will keep us aligned with SRE principles as we wrap up the series.

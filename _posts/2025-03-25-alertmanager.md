@@ -6,7 +6,7 @@ categories: [SRE, Observability, Cloud]
 tags: [prometheus, alertmanager, flask, ec2, docker-compose, monitoring]
 ---
 
-Welcome back, reliability enthusiasts. In part 2, we added Grafana to visualize our Flask app’s metrics, tagging it as `v2.0`. Now, in part 3, we’re enhancing our setup with alerting and deploying it to the cloud. This moves us from passive observation to proactive monitoring and brings our app into a production-like environment on AWS EC2. Here’s how I approached it in four steps, with an eye on SRE principles you can apply to your own systems.
+In part 2, we added Grafana to visualize our Flask app’s metrics. Now, in part 3, we’re enhancing our setup with alerting and deploying it to the cloud. This moves us from passive observation to proactive monitoring and brings our app into an environment on AWS EC2 that mimics production. Here are the four steps I followed, using SRE principles.
 
 ## Step 1: Track Errors for Full Observability
 To catch issues, I added an error metric to the Flask app using Prometheus. This tracked failures such as missing tasks in POST requests, giving us the "Errors" piece of the RED method (Rate, Errors, Duration). It's a small change, but it completes the picture we started with request rates and latency.
@@ -62,8 +62,6 @@ Want to replicate this? Here’s the rundown:
 2. Configure Prometheus rules and Alertmanager. Start simple with a log receiver.
 3. Deploy to a cloud provider like EC2 and use Docker Compose for the full stack.
 4. Test and fix: hit your app, check alerts, adjust as needed.
-
-Clone my [**repo**](https://github.com/Rick-Houser/system-prism), checkout `v3.0`, and run it yourself.
 
 ## Best Practices Recap
 - **Start Small**: Track one error type first and expand later.
