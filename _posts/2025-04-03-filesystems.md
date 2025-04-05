@@ -1,6 +1,6 @@
 ---
 title: "Understanding File Systems in Modern Infrastructure: Beyond Symlinks and Hardlinks"
-description: A follow-up to my [**earlier exploration of symlinks and hardlinks on Medium**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4)
+description: "A follow-up to my [**earlier exploration of symlinks and hardlinks on Medium**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4)"
 date: 2025-04-03 08:00:00 +0800
 categories: [SRE, DevOps, File Systems]
 tags: [file-systems, containers, kubernetes, observability, gitops, rsync, infrastructure-as-code, sre-practices]
