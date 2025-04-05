@@ -3,7 +3,7 @@ title: "SRE Foundations to Production: Alerting and EC2 Deployment (Part 3)"
 description: Enhance your Flask app with Prometheus alerting, Alertmanager notifications, and deploy it to AWS EC2 for a production-like setup.
 date: 2025-03-25 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
-tags: [prometheus, alertmanager, flask, ec2, docker-compose, monitoring]
+tags: [prometheus, alertmanager, flask, ec2, docker-compose, monitoring, devops, cloud, observability]
 ---
 
 In part 2, we added Grafana to visualize our Flask app’s metrics. Now, in part 3, we’re enhancing our setup with alerting and deploying it to the cloud. This moves us from passive observation to proactive monitoring and brings our app into an environment on AWS EC2 that mimics production. Here are the four steps I followed, using SRE principles.

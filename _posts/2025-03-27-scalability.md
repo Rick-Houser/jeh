@@ -3,7 +3,7 @@ title: "SRE Foundations to Production: Scaling and Load Testing (Part 5)"
 description: Scale your Flask app with Locust load testing, monitor CPU and memory with Prometheus, and run multiple instances for production-ready reliability.
 date: 2025-03-27 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
-tags: [locust, psutil, prometheus, grafana, flask, ec2, docker-compose, scaling, monitoring]
+tags: [locust, psutil, prometheus, grafana, flask, ec2, docker-compose, scaling, monitoring, devops, cloud, observability]
 ---
 
 In Part 4, we deepened observability with SQLite persistence, Loki logs, and enhanced dashboards. Now, in Part 5, we test scalability and resource usage by load testing the app, tracking CPU and memory, and running multiple instances. This advances our USE method of Utilization, Saturation, and Errors while preparing the system for real-world demands. Here’s how I approached it in four steps, with insights for your own setups.

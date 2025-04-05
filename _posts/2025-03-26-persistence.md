@@ -3,7 +3,7 @@ title: "SRE Foundations to Production: SQLite, Loki, and Dashboards (Part 4)"
 description: Enhance your Flask app’s observability with SQLite persistence, Loki log aggregation, and advanced Grafana dashboards in this SRE-focused guide.
 date: 2025-03-26 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
-tags: [sqlite, loki, promtail, grafana, flask, ec2, docker-compose, monitoring]
+tags: [sqlite, loki, promtail, grafana, flask, ec2, docker-compose, monitoring, devops, cloud, observability]
 ---
 
 Let’s continue our SRE journey. In part 3, we added alerting with Alertmanager and deployed our Flask app to AWS EC2. Now, in part 4, we’re enhancing observability with persistent storage, log aggregation, and richer dashboards. These steps make our app more realistic and insightful, which are key traits of a reliable system. Here’s how I tackled it in four steps, with lessons for your own projects.

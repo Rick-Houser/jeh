@@ -3,7 +3,7 @@ title: "SRE Foundations to Production: Advanced Monitoring Setup (Part 6)"
 description: Run two Flask instances with PostgreSQL, monitor USE/RED metrics via Prometheus and Grafana, and load test with Locust to push reliability.
 date: 2025-03-29 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
-tags: [flask, prometheus, grafana, locust, postgresql, docker-compose, monitoring, load-testing, nginx]
+tags: [flask, prometheus, grafana, locust, postgresql, docker-compose, monitoring, load-testing, nginx, devops, cloud, observability]
 ---
 
 Thanks for joining me for Part 6 of this SRE series. In the previous posts, we built a Flask app with monitoring capabilities. During this process, we hit 92% CPU, which triggered a `HighCPUUsage` alert, but 50 to 60% failures under load showed there’s still work to do. Shifting from EC2 to Docker Compose, I’ll take observability further by running two instances with PostgreSQL, track USE/RED metrics, and test reliability with Locust. Here’s the five-step process I followed, with insights for building your own SRE skills.
