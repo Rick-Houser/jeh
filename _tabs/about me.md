@@ -16,6 +16,6 @@ My technology journey began in the dial-up era, building websites on Geocities a
 
 Today, I leverage this diverse background as a freelance consultant, helping clients implement robust CI/CD pipelines, infrastructure as code solutions, and comprehensive monitoring systems that enhance reliability while reducing operational costs. I focus on implementing SRE best practices, reducing technical debt, and optimizing cloud operations for maximum business impact. When not immersed in improving system reliability, I enjoy outdoor adventures with my family which provide fresh perspectives on technical challenges and keep me energized.
 
-Curious to learn more about my approach to DevOps and SRE? Check out my [blog]({% link _tabs/blog.md %}) where I share insights on infrastructure automation, observability, and incident management, or reach out via the links below.
+Curious to learn more about my approach to DevOps and SRE? Check out my [blog]({% link _tabs/blog.md %}) where I share insights on infrastructure automation, observability, and incident management, or reach out via the links in the sidebar.
 
 Thanks for stopping by!
