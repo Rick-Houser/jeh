@@ -2,11 +2,11 @@
 title: "Understanding File Systems in Modern Infrastructure: Beyond Symlinks and Hardlinks"
 description: "A follow-up to my earlier exploration of symlinks and hardlinks on Medium"
 date: 2025-04-03 08:00:00 +0800
-categories: [SRE, Infrastructure]
+categories: [Infrastructure, File Systems]
 tags: [file-systems, containers, kubernetes, observability, gitops, rsync, infrastructure-as-code, sre-practices, devops]
 ---
 
-It's been several years since I [**wrote about the fundamentals of how file systems handle links**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4){:target="_blank"}. While those concepts remain foundational, the landscape of how we interact with file systems has evolved dramatically in the context of modern cloud infrastructure, containers, and distributed systems. Let's explore how these basic concepts extend into tools and practices relevant for today's SRE and DevOps professionals.
+Several years ago, I [**covered the basics of file system links**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4){:target="_blank"}. Those principles remain key, but modern cloud infrastructure, containers, and distributed systems have transformed how we manage file systems. This post examines how those concepts apply to today’s SRE and DevOps practices.
 
 ## File System Abstractions in Container Environments
 Container technologies like Docker and Kubernetes have introduced new layers of abstraction in how we interact with file systems. When working with containers, understanding the relationship between volumes, bind mounts, and the underlying storage becomes crucial:
