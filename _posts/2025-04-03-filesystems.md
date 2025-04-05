@@ -6,7 +6,7 @@ categories: [SRE, DevOps, File Systems]
 tags: [file-systems, containers, kubernetes, observability, gitops, rsync, infrastructure-as-code, sre-practices]
 ---
 
-It's been several years since I [**wrote about the fundamentals of how file systems handle links**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4). While those concepts remain foundational, the landscape of how we interact with file systems has evolved dramatically in the context of modern cloud infrastructure, containers, and distributed systems. Let's explore how these basic concepts extend into tools and practices relevant for today's SRE and DevOps professionals.
+It's been several years since I [**wrote about the fundamentals of how file systems handle links**](https://medium.com/@webrickh/what-is-the-difference-between-a-hard-link-and-a-symbolic-link-3d38d8b557a4){:target="_blank"}. While those concepts remain foundational, the landscape of how we interact with file systems has evolved dramatically in the context of modern cloud infrastructure, containers, and distributed systems. Let's explore how these basic concepts extend into tools and practices relevant for today's SRE and DevOps professionals.
 
 ## File System Abstractions in Container Environments
 Container technologies like Docker and Kubernetes have introduced new layers of abstraction in how we interact with file systems. When working with containers, understanding the relationship between volumes, bind mounts, and the underlying storage becomes crucial:
