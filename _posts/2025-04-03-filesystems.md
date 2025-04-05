@@ -1,7 +1,7 @@
 ---
 title: "Understanding File Systems in Modern Infrastructure: Beyond Symlinks and Hardlinks"
 description: "A follow-up to my earlier exploration of symlinks and hardlinks on Medium"
-date: 2025-04-03 08:00:00 +0800
+date: 2025-04-03 08:00:00 -0800
 categories: [Infrastructure, File Systems]
 tags: [file-systems, containers, kubernetes, observability, gitops, rsync, infrastructure-as-code, sre-practices, devops]
 ---

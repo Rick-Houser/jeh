@@ -1,7 +1,7 @@
 ---
 title: "SRE Foundations to Production: Alerting and EC2 Deployment (Part 3)"
 description: Enhance your Flask app with Prometheus alerting, Alertmanager notifications, and deploy it to AWS EC2 for a production-like setup.
-date: 2025-03-25 08:00:00 +0800
+date: 2025-03-25 08:00:00 -0800
 categories: [SRE, Observability, Cloud]
 tags: [prometheus, alertmanager, flask, ec2, docker-compose, monitoring, devops, cloud, observability]
 ---

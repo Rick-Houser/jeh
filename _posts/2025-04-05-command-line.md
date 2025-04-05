@@ -1,7 +1,7 @@
 ---
 title: "From Command Line to Observability: The Evolution of System Introspection"
 description: "A follow-up to my earlier analysis of the ls *c command on Medium."
-date: 2025-04-05 08:00:00 +0800
+date: 2025-04-05 08:00:00 -0800
 categories: [Observability, Tools]
 tags: [cli-tools, structured-logging, system-call-tracing, iac, kubernetes, prometheus, grafana]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "SRE Foundations to Production: Monitorable Flask App Setup (Part 1)"
 description: Turn a Flask app into a monitorable system with tests, logs, Docker, and Prometheus for SRE reliability.
-date: 2025-03-22 08:00:00 +0800
+date: 2025-03-22 08:00:00 -0800
 categories: [SRE, Observability]
 tags: [observability, monitoring, containerization, prometheus, logging, devops, flask, observability]
 ---
