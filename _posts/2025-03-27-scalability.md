@@ -1,5 +1,5 @@
 ---
-title: SRE Basics - Scaling, Resource Monitoring and Load Testing (Part 5)
+title: "SRE Foundations to Production: Scaling and Load Testing (Part 5)"
 description: Scale your Flask app with Locust load testing, monitor CPU and memory with Prometheus, and run multiple instances for production-ready reliability.
 date: 2025-03-27 08:00:00 +0800
 categories: [SRE, Observability, Cloud]

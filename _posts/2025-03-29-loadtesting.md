@@ -1,5 +1,5 @@
 ---
-title: SRE Basics - Advanced Monitoring and Load Testing with Multiple Instances (Part 6)
+title: "SRE Foundations to Production: Advanced Monitoring Setup (Part 6)"
 description: Run two Flask instances with PostgreSQL, monitor USE/RED metrics via Prometheus and Grafana, and load test with Locust to push reliability.
 date: 2025-03-29 08:00:00 +0800
 categories: [SRE, Observability, Cloud]

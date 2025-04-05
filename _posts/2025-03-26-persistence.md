@@ -1,5 +1,5 @@
 ---
-title: SRE Basics - Persistence, Logs, and Dashboards with SQLite and Loki (Part 4)
+title: "SRE Foundations to Production: SQLite, Loki, and Dashboards (Part 4)"
 description: Enhance your Flask app’s observability with SQLite persistence, Loki log aggregation, and advanced Grafana dashboards in this SRE-focused guide.
 date: 2025-03-26 08:00:00 +0800
 categories: [SRE, Observability, Cloud]
