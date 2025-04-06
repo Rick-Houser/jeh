@@ -6,7 +6,7 @@ categories: [Observability, Tools]
 tags: [cli-tools, structured-logging, system-call-tracing, iac, kubernetes, prometheus, grafana]
 ---
 
-A few years back, I [**shared a quick guide on the `ls *c` command**](https://medium.com/@webrickh/what-happens-when-you-type-ls-c-7c72166a9114). That post broke down a simple way to list files, laying the groundwork for understanding system introspection. Now, with infrastructure more complex, we’ve moved beyond basic command-line tools to advanced observability methods, though those early lessons still matter.
+A few years back, I [**shared a quick guide on the `ls *c` command**](https://medium.com/@webrickh/what-happens-when-you-type-ls-c-7c72166a9114){:target="_blank"}. That post broke down a simple way to list files, laying the groundwork for understanding system introspection. Now, with infrastructure more complex, we’ve moved beyond basic command-line tools to advanced observability methods, though those early lessons still matter.
 
 ## Beyond ls: Modern CLI Tools for System Introspection
 While `ls *c` remains useful for quickly finding files with specific patterns, the modern SRE toolkit includes more powerful alternatives that provide richer information about our systems:
