@@ -12,7 +12,7 @@ This post details my process of provisioning a basic AWS environment using Terra
 I started by installing Terraform and the AWS CLI, then configured AWS credentials with a dedicated IAM user.
 
 ### Install Terraform:
-1. Visit [**terraform.io/downloads**](terraform.io/downloads){:target="_blank"}.
+1. Visit [**https://developer.hashicorp.com/terraform/install**](https://developer.hashicorp.com/terraform/install){:target="_blank"}.
 2. Download the binary for your OS (e.g., macOS, Windows).
 3. Unzip the file and move it to a directory in your PATH:
     * macOS/Linux: `sudo mv terraform /usr/local/bin/` (ensure `/usr/local/bin` is in your PATH).
@@ -20,7 +20,7 @@ I started by installing Terraform and the AWS CLI, then configured AWS credentia
 4. Verify the installation: `terraform --version` (e.g., v1.9.x as of April 2025).
 
 ### Install and Configure AWS CLI
-Install the AWS CLI from [**aws.amazon.com/cli**](aws.amazon.com/cli){:target="_blank"}, then configure it:
+Install the AWS CLI from [**https://aws.amazon.com/cli/**](https://aws.amazon.com/cli/){:target="_blank"}, then configure it:
 
 ```bash
 aws configure
