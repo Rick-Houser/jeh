@@ -29,8 +29,8 @@ aws configure
 
 Using an existing AWS account, I created an IAM user (`terraform-demo-user`) for Terraform to manage resources like EC2 and S3. Initial runs failed with "Access Denied" errors due to missing permissions. I resolved this by defining a minimal policy, following the principle of least privilege.
 
-> Prompt Tip: AWS error messages (e.g., `not authorized to perform: s3:GetBucketAcl`) indicate missing permissions—start with basic access and adjust as needed. For production, avoid storing Access Keys in plain text; use IAM roles or AWS Secrets Manager instead.
-{: .prompt-info }
+> AWS error messages (e.g., `not authorized to perform: s3:GetBucketAcl`) indicate missing permissions—start with basic access and adjust as needed. For production, avoid storing Access Keys in plain text; use IAM roles or AWS Secrets Manager instead.
+{: .prompt-warning }
 
 ## Writing the Terraform Configuration
 I created a GitHub repository (`terraform-aws-demo`) and defined the resources in `main.tf`:
@@ -85,8 +85,8 @@ terraform plan -out=plan.tfplan
 terraform apply "plan.tfplan"
 ```
 
-> Prompt Tip: Save the plan file `terraform plan -out=plan.tfplan` to ensure the reviewed plan matches what’s applied, reducing the risk of errors.
-{: .prompt-info }
+> Save the plan file `terraform plan -out=plan.tfplan` to ensure the reviewed plan matches what’s applied, reducing the risk of errors.
+{: .prompt-tip }
 
 The first `terraform apply` failed due to an invalid AMI ID (`ami-0c55b159cbfafe1f0`). I had to update it to a valid Amazon Linux 2 AMI for `us-west-2` (`ami-0c2ab3d2efb3b2f5`). The S3 bucket name also failed validation due to uppercase characters in the random suffix, so I set `upper = false` in the `random_string` resource.
 
@@ -96,9 +96,6 @@ To better understand my setup, I created an architecture diagram using draw.io. 
 ![Desktop View](/assets/img/posts/20250406/terraform-aws-demo.png){: width="100%" height="auto" }
 _PostgreSQL added to docker-compose_
 
-> Prompt Tip: Diagrams help clarify resource relationships, especially for networking components like VPCs and subnets.
-{: .prompt-tip }
-
 ## Cleaning Up
 I removed the resources to avoid AWS charges:
 
@@ -106,7 +103,8 @@ I removed the resources to avoid AWS charges:
 terraform destroy
 ```
 
-Prompt Tip: Always run `terraform destroy` after testing to prevent unexpected costs, especially with cloud resources.
+> Always run `terraform destroy` after testing to prevent unexpected costs, especially with cloud resources.
+{: .prompt-tip }
 
 ## Conclusion
 This Terraform project provided a straightforward way to apply Infrastructure as Code on AWS. Addressing issues like AMI IDs and S3 naming refined my approach to provisioning cloud resources. It’s a useful exercise for exploring DevOps and SRE workflows in a controlled setup.
