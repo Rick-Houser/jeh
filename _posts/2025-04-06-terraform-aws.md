@@ -12,15 +12,15 @@ This post details my process of provisioning a basic AWS environment using Terra
 I started by installing Terraform and the AWS CLI, then configured AWS credentials with a dedicated IAM user.
 
 ### Install Terraform:
-1. Visit terraform.io/downloads.
+1. Visit [**terraform.io/downloads**](terraform.io/downloads){:target="_blank"}.
 2. Download the binary for your OS (e.g., macOS, Windows).
 3. Unzip the file and move it to a directory in your PATH:
-    * macOS/Linux: sudo mv terraform /usr/local/bin/ (ensure /usr/local/bin is in your PATH).
-    * Windows: Add to C:\Program Files and update PATH in System Settings.
-4. Verify the installation: terraform --version (e.g., v1.9.x as of April 2025).
+    * macOS/Linux: `sudo mv terraform /usr/local/bin/` (ensure `/usr/local/bin` is in your PATH).
+    * Windows: Add to `C:\Program Files` and update PATH in System Settings.
+4. Verify the installation: `terraform --version` (e.g., v1.9.x as of April 2025).
 
 ### Install and Configure AWS CLI
-Install the AWS CLI from aws.amazon.com/cli, then configure it:
+Install the AWS CLI from [**aws.amazon.com/cli**](aws.amazon.com/cli){:target="_blank"}, then configure it:
 
 ```bash
 aws configure
@@ -29,7 +29,8 @@ aws configure
 
 Using an existing AWS account, I created an IAM user (`terraform-demo-user`) for Terraform to manage resources like EC2 and S3. Initial runs failed with "Access Denied" errors due to missing permissions. I resolved this by defining a minimal policy, following the principle of least privilege.
 
-Prompt Tip: AWS error messages (e.g., `not authorized to perform: s3:GetBucketAcl`) indicate missing permissions—start with basic access and adjust as needed. For production, avoid storing Access Keys in plain text; use IAM roles or AWS Secrets Manager instead.
+> Prompt Tip: AWS error messages (e.g., `not authorized to perform: s3:GetBucketAcl`) indicate missing permissions—start with basic access and adjust as needed. For production, avoid storing Access Keys in plain text; use IAM roles or AWS Secrets Manager instead.
+{: .prompt-info }
 
 ## Writing the Terraform Configuration
 I created a GitHub repository (`terraform-aws-demo`) and defined the resources in `main.tf`:
@@ -84,7 +85,8 @@ terraform plan -out=plan.tfplan
 terraform apply "plan.tfplan"
 ```
 
-Prompt Tip: Save the plan file `terraform plan -out=plan.tfplan` to ensure the reviewed plan matches what’s applied, reducing the risk of errors.
+> Prompt Tip: Save the plan file `terraform plan -out=plan.tfplan` to ensure the reviewed plan matches what’s applied, reducing the risk of errors.
+{: .prompt-info }
 
 The first `terraform apply` failed due to an invalid AMI ID (`ami-0c55b159cbfafe1f0`). I had to update it to a valid Amazon Linux 2 AMI for `us-west-2` (`ami-0c2ab3d2efb3b2f5`). The S3 bucket name also failed validation due to uppercase characters in the random suffix, so I set `upper = false` in the `random_string` resource.
 
@@ -94,7 +96,8 @@ To better understand my setup, I created an architecture diagram using draw.io. 
 ![Desktop View](/assets/img/posts/20250406/terraform-aws-demo.png){: width="100%" height="auto" }
 _PostgreSQL added to docker-compose_
 
-Prompt Tip: Diagrams help clarify resource relationships, especially for networking components like VPCs and subnets.
+> Prompt Tip: Diagrams help clarify resource relationships, especially for networking components like VPCs and subnets.
+{: .prompt-tip }
 
 ## Cleaning Up
 I removed the resources to avoid AWS charges:
