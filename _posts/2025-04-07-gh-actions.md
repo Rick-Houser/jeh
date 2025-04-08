@@ -6,18 +6,18 @@ categories: [DevOps, Automation]
 tags: [github actions, docker, node js, ci cd, devops, automation, sre]
 ---
 
-This post outlines my process of setting up a CI/CD pipeline for a Node.js app using GitHub Actions and Docker. Following my [previous Terraform project](#), I applied automation to streamline building and testing, documenting the steps for a simple workflow.
+This post details my process of automating a CI/CD pipeline for a Node.js app using GitHub Actions and Docker. By setting up a workflow to build and test the app on every code push, I ensured consistent deployments and early error detection—key practices for reliable DevOps and SRE workflows.
 
 ## Setting Up the Prerequisites
 I installed Node.js for the app, Docker for containerization, and set up a GitHub repository to host the pipeline.
 
 **Install Node.js**:
-1. Go to [nodejs.org](https://nodejs.org) and download the LTS version (e.g., 18.x).
+1. Go to [nodejs.org](https://nodejs.org){:target="_blank"} and download the LTS version (e.g., 18.x).
 2. Install it on your system (macOS, Windows, or Linux).
 3. Verify: `node --version` (should show v18.x.x).
 
 **Install Docker**:
-1. Download Docker Desktop from [docker.com/get-started](https://www.docker.com/get-started).
+1. Download Docker Desktop from [docker.com/get-started](https://www.docker.com/get-started){:target="_blank"}.
 2. Install and start Docker.
 3. Verify: `docker --version`.
 
@@ -103,11 +103,9 @@ git push origin main
 {: .prompt-warning }
 
 ## Verifying the Pipeline
-I checked the pipeline run in the "Actions" tab of my GitHub repository (`https://github.com/yourusername/ci-cd-demo`). The workflow succeeded, with the test step logging "Hello, DevOps!". An initial failure due to a "Connection refused" error was fixed by increasing the sleep duration to 10 seconds. 
-```yaml
-- name: Test
-  run: docker run -d -p 3000:3000 ci-cd-demo && sleep 10 && curl http://localhost:3000
-```
+An initial failure due to a "Connection refused" error was fixed by increasing the sleep duration to 10 seconds. I checked the pipeline run in the "Actions" tab of my GitHub repository. The workflow succeeded, with the test step logging "Hello, DevOps!".
+![Desktop View](/assets/img/posts/20250407/test-success.png){: width="100%" height="auto" }
+_GitHub Actions log showing successful test output_
 
 ## Visualizing the CI/CD Pipeline
 I created a diagram using draw.io to illustrate the flow from code push to testing:
@@ -115,7 +113,7 @@ I created a diagram using draw.io to illustrate the flow from code push to testi
 ![Desktop View](/assets/img/posts/20250407/ci-cd-demo.png){: width="100%" height="auto" }
 _Diagram of the CI/CD pipeline_
 
-## Cleanming Up
+## Cleaning Up
 I stopped local Docker containers after testing:
 ```bash
 docker ps # Find the container ID
