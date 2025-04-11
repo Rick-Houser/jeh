@@ -75,7 +75,7 @@ This balances simplicity with flexibility, a key consideration for teams managin
 This script is a practical starting point for engineers managing distributed systems or log analysis at a large scale, where rapid error detection is critical. It could slot into incident response playbooks, parsing logs to flag spikes in 500 errors, or feed automated alerts for proactive monitoring.
 
 ## Visualizing the Process
-Here’s a flowchart of the log parsing logic (line by line reading not shown for simplicity):
+Here’s a flowchart of the log parsing logic:
 ![Desktop View](/assets/img/posts/202504011/log-parse-flow-chart.png){: width="100%" height="auto" }
 _Log parsing flow chart_
 
