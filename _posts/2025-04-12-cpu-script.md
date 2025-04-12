@@ -3,7 +3,7 @@ title: "Monitoring CPU Usage with Python for System Reliability"
 description: "A Python script to monitor CPU usage and send email alerts when it exceeds a threshold, ensuring system health."
 date: 2025-04-12 08:00:00 -0700
 categories: [Automation, Monitoring]
-tags: [python, psutil, smtplib, monitoring, alerting, error handling, automation, devops, sre]
+tags: [python, psutil, smtplib, monitoring, alerting, error handling, automation, devops, sre, scripting]
 ---
 
 Picture a busy application struggling to keep up as users flood in—constant checks can spot trouble before it impacts performance. This post explores my method for tracking CPU usage and issuing alerts when it crosses a set limit, a vital task for keeping systems stable.
