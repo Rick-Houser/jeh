@@ -80,7 +80,7 @@ This tool helps teams overseeing busy applications maintain performance by catch
 
 ## Visualizing the Process
 Here’s a Mermaid flowchart of the monitoring process:
-![Desktop View](/assets/img/posts/202504012/cpu-script.png){: width="100%" height="auto" }
+![Desktop View](/assets/img/posts/20250412/cpu-script.png){: width="100%" height="auto" }
 _cpu monitoring flow chart_
 
 ## What I’d Do Differently
