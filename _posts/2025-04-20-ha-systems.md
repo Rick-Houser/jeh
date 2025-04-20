@@ -1,6 +1,6 @@
 ---
-title: "Ensuring High Availability and Reliability: Building Resilient Systems"
-description: "A guide to techniques for maintaining high availability and reliability in system operations."
+title: "Introduction to High Availability Concepts"
+description: "A beginner’s guide to high availability concepts, covering failover, redundancy, and monitoring to build reliable systems with minimal downtime."
 date: 2025-04-20 08:00:00 -0700
 categories: [System Reliability]
 tags: [high availability, reliability, failover, fault tolerance, redundancy, monitoring, prometheus, grafana, system design, capacity planning]
