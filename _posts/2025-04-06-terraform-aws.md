@@ -2,7 +2,7 @@
 title: "A Simple AWS Setup with Terraform"
 description: "A step-by-step guide to deploying a VPC, EC2, and S3 on AWS using Terraform."
 date: 2025-04-06 08:00:00 -0800
-categories: [Infrastructure, Cloud]
+categories: [Automation, Infrastructure as Code]
 tags: [terraform, aws, vpc, ec2, s3, devops, sre, iac, cloud]
 ---
 

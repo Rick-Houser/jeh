@@ -2,7 +2,7 @@
 title: "Incident Management and Escalation Handling: Keeping Systems Reliable"
 description: "A guide to structured incident management and escalation for SRE and DevOps teams, with a focus on reliability and best practices."
 date: 2025-04-13 08:00:00 -0700
-categories: [SRE, Incident Management]  
+categories: [System Reliability, Incident Management]  
 tags: [incident management, escalation handling, alerting, signal-to-noise ratio, reliability, devops, sre, mttd, mttr, datadog, pagerduty, opsgenie, prometheus] 
 ---
 

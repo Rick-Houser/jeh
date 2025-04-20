@@ -2,7 +2,7 @@
 title: "Agile Methodologies in System Operations: Enhancing Collaboration and Efficiency"
 description: "An exploration of how Agile principles can improve collaboration and efficiency in system operations and infrastructure management."
 date: 2025-04-15 08:00:00 -0700
-categories: [System Operations, Collaboration]
+categories: [Collaboration, Agile Practices]
 tags: [agile methodologies, collaboration, iterative development, system reliability]
 ---
 

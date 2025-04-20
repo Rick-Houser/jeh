@@ -2,7 +2,7 @@
 title: "Log Analysis for Error Detection in System Workflows"
 description: "A Python script to parse logs, detect errors, and count error types, optimized for large log files."
 date: 2025-04-11 08:00:00 -0800
-categories: [Automation, Log Analysis]
+categories: [Observability, Log Analysis]
 tags: [python, logging, error detection, devops, automation, regex, performance, scripting]
 ---
 

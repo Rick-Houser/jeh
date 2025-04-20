@@ -2,7 +2,7 @@
 title: "Automating a simple CI/CD Pipeline with GitHub Actions"
 description: "A step-by-step guide to setting up a CI/CD pipeline for a Node.js app using GitHub Actions and Docker."
 date: 2025-04-07 08:00:00 -0800
-categories: [DevOps, Automation]
+categories: [Automation, CI/CD]
 tags: [github actions, docker, node js, ci cd, devops, automation, sre]
 ---
 

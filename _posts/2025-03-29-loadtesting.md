@@ -2,7 +2,7 @@
 title: "SRE Foundations to Production: Advanced Monitoring Setup (Part 6)"
 description: Run two Flask instances with PostgreSQL, monitor USE/RED metrics via Prometheus and Grafana, and load test with Locust to push reliability.
 date: 2025-03-29 08:00:00 -0800
-categories: [SRE, Observability, Cloud]
+categories: [Observability, Monitoring]
 tags: [flask, prometheus, grafana, locust, postgresql, docker-compose, monitoring, load-testing, nginx, devops, cloud, observability]
 ---
 
