@@ -40,8 +40,6 @@ Before containerizing, test each microservice locally to ensure it functions cor
   ./build/install/opentelemetry-demo-ad/bin/Ad
   ```
   Expect to see the Ad service listening on your chosen port.
-  ![Desktop View](/assets/img/posts/20250503/java-binary-exec.png){: width="100%" height="auto" }
-
 
 - **Python (Recommendation Service)**: For local testing, install dependencies and run the service:
   ```bash
