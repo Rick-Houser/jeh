@@ -31,7 +31,7 @@ Before containerizing, test each microservice locally to ensure it functions cor
   ./product-catalog
   ```
   Verify the microservice starts, expecting:
-  ![Desktop View](/assets/img/posts/20250501/go-binary-execution.png){: width="100%" height="auto" }
+  ![Desktop View](/assets/img/posts/20250503/go-binary-execution.png){: width="100%" height="auto" }
 
 - **Java (Frontend)**: Build and run with Gradle.
   ```bash
@@ -40,7 +40,7 @@ Before containerizing, test each microservice locally to ensure it functions cor
   ./build/install/opentelemetry-demo-ad/bin/Ad
   ```
   Expect to see the Ad service listening on your chosen port.
-  ![Desktop View](/assets/img/posts/20250501/java-binary-exec.png){: width="100%" height="auto" }
+  ![Desktop View](/assets/img/posts/20250503/java-binary-exec.png){: width="100%" height="auto" }
 
 
 - **Python (Recommendation Service)**: For local testing, install dependencies and run the service:
@@ -92,7 +92,7 @@ docker run \
 
 A "Loaded 10 products" message confirms the service is running. If you encounter errors, check `docker logs product-catalog` for errors.
 
-![Desktop View](/assets/img/posts/20250501/docker-go-run.png){: width="100%" height="auto" }
+![Desktop View](/assets/img/posts/20250503/docker-go-run.png){: width="100%" height="auto" }
 _Docker run output for Go microservice_
 
 ### Containerizing a Java Microservice
@@ -134,7 +134,7 @@ docker run \
 
 If all went well, you should see a "Java Ad service has started" message. If not, check `docker logs ad-service` for errors.
 
-![Desktop View](/assets/img/posts/20250501/docker-java-run.png){: width="100%" height="auto" }
+![Desktop View](/assets/img/posts/20250503/docker-java-run.png){: width="100%" height="auto" }
 _Docker run output showing the Java Ad service has started_
 
 ### Containerizing a Python Microservice
@@ -174,7 +174,7 @@ docker run \
 
 Confirm the service is running with `docker ps`. If the service fails, check `docker logs recommendation` for errors.
 
-![Desktop View](/assets/img/posts/20250501/docker-python-run.png){: width="100%" height="auto" }
+![Desktop View](/assets/img/posts/20250503/docker-python-run.png){: width="100%" height="auto" }
 _docker ps output showing the Python recommendation service is running_
 
 ## Best Practices
