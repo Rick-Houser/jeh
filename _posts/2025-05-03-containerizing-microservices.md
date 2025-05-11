@@ -31,6 +31,7 @@ Before containerizing, test each microservice locally to ensure it functions cor
   ./product-catalog
   ```
   Verify the microservice starts, expecting:
+  
 ![Desktop View](/assets/img/posts/20250503/go-binary-execution.png){: width="100%" height="auto" }
 
 - **Java (Frontend)**: Build and run with Gradle.
