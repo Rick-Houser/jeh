@@ -39,8 +39,6 @@ ecommerce-infra/
 - **Environments**: Separate configurations for prod and dev.
 - **Separation**: Avoid monorepos; each microservice’s infrastructure can have its own repository.
 
-**Screenshot Suggestion**: Directory tree of the Terraform project structure.
-
 ## Step 2: Creating Modular Terraform
 Define a VPC module:
 ```hcl
@@ -107,8 +105,6 @@ module "eks" {
 - **Variables**: Parameterizes inputs for flexibility.
 - **Outputs**: Exposes IDs for cross-module references.
 
-**Screenshot Suggestion**: Code snippet of the EKS module in a code editor.
-
 ## Step 3: Setting Up a Remote Backend
 Configure an S3 backend with DynamoDB locking:
 ```hcl
@@ -159,8 +155,6 @@ Apply:
 terraform init
 terraform apply
 ```
-
-**Screenshot Suggestion**: AWS console showing the S3 bucket and DynamoDB table configurations.
 
 ## Best Practices
 - **Encryption**: Use server-side encryption for S3 state files.
