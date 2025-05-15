@@ -182,7 +182,7 @@ _docker ps output showing the Python recommendation service is running_
 - **Non-root Users**: Use non-root users to enhance security. Go Distroless images (e.g., `gcr.io/distroless/static-debian11`) run as non-root by default, while Python (e.g., `gcr.io/distroless/python3-debian12`) and Java (e.g., `gcr.io/distroless/java21`) require explicit `USER nonroot` or `USER 1000:1000`.
 - **Separate Repositories**: Avoid monorepo architecture; each microservice should have its own repository for scalability and independence.
 
-**Note**: This post focuses on containerization. Additional practices like `.dockerignore` (to reduce build context) and `HEALTHCHECK` (for Kubernetes health probes) are recommended for production but covered in a future post.
+**Production Considerations**: This post focuses on containerization. Additional practices like `.dockerignore` (to reduce build context) and `HEALTHCHECK` (for Kubernetes health probes) are recommended for production but covered in a future post.
 
 ## Takeaways
 This containerization process outlines my approach in building secure, observable microservices. In my next post I'll walk through the process of deploying microservices to Kubernetes.
