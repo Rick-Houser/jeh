@@ -94,7 +94,7 @@ The first `terraform apply` failed due to an invalid AMI ID (`ami-0c55b159cbfafe
 To better understand my setup, I created an architecture diagram using draw.io. The diagram shows the VPC, public subnet, EC2 instance, and S3 bucket, with an Internet Gateway to enable public access to S3:
 
 ![Desktop View](/assets/img/posts/20250406/terraform-aws-demo.png){: width="100%" height="auto" }
-_PostgreSQL added to docker-compose_
+_Terraform-Generated AWS Cloud Infrastructure Diagram_
 
 ## Cleaning Up
 I removed the resources to avoid AWS charges:
