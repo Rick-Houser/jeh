@@ -1,12 +1,11 @@
 ---
-title: "Deploying Microservices on Kubernetes with EKS and Argo CD"
+title: "Deploying an E-commerce Platform on Amazon EKS with GitOps"
 description: "Steps to deploy microservices on an Amazon EKS cluster using Terraform, ingress configuration, and Argo CD for GitOps."
-date: 2025-05-02 08:00:00 -0700
+date: 2025-05-05 08:00:00 -0700
 categories: [Automation, Infrastructure as Code]
 tags: [kubernetes, eks, terraform, argo cd, gitops, ingress, aws alb]
 ---
 
-# Building a Production-Ready E-commerce Platform on Amazon EKS with GitOps
 
 Modern e-commerce applications demand scalable infrastructure, automated deployments, and reliable traffic management. This guide demonstrates how to build a robust foundation using Amazon EKS, Terraform, and Argo CD for GitOps-driven deployments.
 
