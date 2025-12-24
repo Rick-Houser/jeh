@@ -99,7 +99,7 @@ DATABASE_URL=postgresql://postgres:password@localhost:5432/ai_task_db
 **Note**: Stop with `docker-compose down` when done. For production, we'll use Render's managed Postgres. There is no local overhead.
 
 ## Step 3: Building the AI-Powered Backend
-The heart of our app is that FastAPI handles requests, OpenAI generates summaries, priorities, and embeddings, and pgvector enables cosine-similarity search. From my microservices migrations, I know keeping this lean prevents bloat.
+The heart of our app is that FastAPI handles requests, OpenAI generates summaries, priorities, and embeddings, and pgvector enables cosine-similarity search. From microservices migrations, I know keeping this lean prevents bloat.
 
 Create `backend/main.py`:
 ```python
@@ -200,13 +200,13 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-**Best Practice**: Add Pydantic models for validation and CORS for browser compatibility. Run locally: `cd backend && python main.py`. Hit `/docs` for Swagger UI testing.
+**Best Practice**: Add Pydantic models for validation and CORS for browser compatibility.
 
 > **Tip**: OpenAI has rate limits. Handle them with retries in production (for example, exponential backoff).
 {: .prompt-tip }
 
 ## Step 4: Crafting the Responsive Frontend
-A clean UI is crucial; I've refactored many from monoliths, so this uses Tailwind for rapid, mobile-first design.
+A clean UI is crucial. This project uses Tailwind CSS for rapid, mobile-first design.
 
 Update `frontend/src/App.tsx`:
 ```tsx
@@ -343,10 +343,13 @@ export default {
 }
 ```
 
-Run: `cd frontend && npm run dev`. Responsive by default. Test on mobile.
+Run: `cd frontend && npm run dev`. The UI is responsive by default, so test it on mobile.
+
+![Desktop View](/assets/img/posts/20251223/frontend_ui.png){: width="100%" height="auto" }
+_The AI Task Manager UI in action, showing task creation and semantic search results_
 
 ## Step 5: Render Blueprint for Deployment
-IaC is key; this YAML deploys everything atomically, like my GCP pipelines.
+IaC is key; this YAML deploys everything atomically.
 
 Create `render.yaml` in root:
 ```yaml
@@ -401,17 +404,25 @@ pydantic==2.5.0
 
 ## Step 6: Deploy and Configure
 Push to GitHub, then:
-1. Render Dashboard → New → Blueprint → Connect repo → Deploy.
-2. Set `OPENAI_API_KEY` in API service env vars.
+1. Render Dashboard → Blueprints → New Blueprint Instance → Connect repo.
+
+![Desktop View](/assets/img/posts/20251223/connect_repo.png){: width="100%" height="auto" }
+_Figure 2: Connecting your GitHub repo to a new Render Blueprint instance._
+
+2. Set the proper values for `OPENAI_API_KEY` and deploy changes.
 3. For pgvector: Connect via psql (credentials in dashboard):
+4. Enable the pgvector Extension:
    ```sql
    CREATE EXTENSION IF NOT EXISTS vector;
-   \dx  -- Verify
    ```
-4. Manual redeploy API after extension enablement.
-5. Update frontend env var `VITE_API_URL` to your API URL, commit/push for auto-redeploy.
+5. Verify the Extension is Enabled:
+   ```sql
+   \dx
+   ```
+6. Manual redeploy API after extension enablement.
+7. Update frontend env var `VITE_API_URL` to your API URL, commit/push for auto-redeploy.
 
-Your app lives at the static site URL. Test end-to-end.
+Your app is now live at the static site URL. Test it end-to-end to ensure everything works.
 
 ## Troubleshooting
 From real-world deploys, here's what trips folks up:
