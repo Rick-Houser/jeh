@@ -403,8 +403,7 @@ pydantic==2.5.0
 {: .prompt-warning }
 
 ## Step 6: Deploy and Configure
-Push to GitHub, then:
-1. Render Dashboard → Blueprints → New Blueprint Instance → Connect repo.
+Push to GitHub, then navigate to Render Dashboard → Blueprints → New Blueprint Instance → Connect repo.
 
 ![Desktop View](/assets/img/posts/20251223/connect_repo.png){: width="100%" height="auto" }
 _Figure 2: Connecting your GitHub repo to a new Render Blueprint instance._
